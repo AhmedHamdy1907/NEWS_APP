@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../config/theme/application_theme.dart';
 import '../core/utils/routes_manager/routes_manger.dart';
-import '../presentation/screens/splash_screen/splash_screen.dart';
 class MyApp extends StatelessWidget
 {
   const MyApp({super.key});

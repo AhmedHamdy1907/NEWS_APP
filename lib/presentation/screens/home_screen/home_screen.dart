@@ -1,22 +1,20 @@
-import 'dart:ffi';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:news_apps/core/utils/assets_manger/assets_manger.dart';
-import 'package:news_apps/core/utils/strings_manger/strings_manger.dart';
-import 'package:news_apps/presentation/screens/home_screen/Taps/category_details/category_details.dart';
+import 'package:news_apps/presentation/screens/home_screen/Taps/category_details/view/category_details.dart';
 import 'package:news_apps/presentation/screens/home_screen/Taps/settings/settings_taps.dart';
 import 'package:news_apps/presentation/screens/home_screen/search/custom_search.dart';
 import '../../../data_model/category_dataModel/category_data_model.dart';
-import 'Taps/categoris_taps/categoris_taps.dart';
+import 'Taps/categoris/category.dart';
 import 'home_drawer/home_drawer.dart';
-class homeScreen extends StatefulWidget {
-   const homeScreen({super.key});
+class HomeScreen extends StatefulWidget {
+   const HomeScreen({super.key});
   @override
-  State<homeScreen> createState() => _homeScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
-class _homeScreenState extends State<homeScreen> {
-   late Widget selectedWidget= CategorisTaps(onCategoryItemClciked: onCategoryClicked ,);
+class _HomeScreenState extends State<HomeScreen> {
+     late Widget selectedWidget=CategorisTaps(onCategoryItemClciked: onCategoryClicked);
   String title="News App";
-  @override
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,8 +32,9 @@ class _homeScreenState extends State<homeScreen> {
                 showSearch(context: context, delegate: customSearch());
               }
               ,
-              icon: Icon(Icons.search_rounded),),
-          SizedBox(width: 20,)],
+              icon: const Icon(Icons.search_rounded),),
+           SizedBox(width: 20.w,)
+          ],
         ),
         drawer:HomeDrawer(onDrawerItemClciked:onDrawerItemClciked),
           body: selectedWidget,
@@ -46,13 +45,13 @@ class _homeScreenState extends State<homeScreen> {
 void onCategoryClicked( CategoryDM category)
 {
   title=category.title;
-  selectedWidget=CategoryDetails(categoryDM: category,);
+  selectedWidget=categoryDetails(categoryDM: category,);
   setState(() {
   });
 }
-void onDrawerItemClciked(MenuItem Item)
+void onDrawerItemClciked(MenuItem item)
 {
-  switch(Item)
+  switch(item)
       {
     case MenuItem.catgories:{selectedWidget=CategorisTaps(onCategoryItemClciked: onCategoryClicked,);}
     case MenuItem.settings:{selectedWidget=const SettingsTaps();}

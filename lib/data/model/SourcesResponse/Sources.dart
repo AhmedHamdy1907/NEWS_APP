@@ -14,7 +14,8 @@ class Source {
       this.category, 
       this.language, 
       this.country,});
-  Source.fromJson(dynamic json) {
+  Source.fromJson(dynamic json)
+  {
     id = json['id'];
     name = json['name'];
     description = json['description'];

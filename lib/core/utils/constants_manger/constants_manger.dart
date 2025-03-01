@@ -1,4 +1,4 @@
-class Constantsmanger
+class ConstantsManger
 {
   static const String sportsBackEngId="sports";
   static const String entertainmentBackEngId="entertainment";

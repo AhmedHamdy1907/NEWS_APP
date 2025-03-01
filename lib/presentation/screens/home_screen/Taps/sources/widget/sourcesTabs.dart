@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:news_apps/presentation/screens/home_screen/Taps/category_details/widget/sources_widget/sourceItemWidget.dart';
-import '../../../../../../../data/model/SourcesResponse/Sources.dart';
-import '../../../news/articels_List_widget.dart';
-class SourcesWidget extends StatefulWidget {
+import 'package:news_apps/presentation/screens/home_screen/Taps/sources/widget/sourceWidget.dart';
+import '../../../../../../data/model/SourcesResponse/Sources.dart';
+import '../../articles/View/articelsView.dart';
+class SourcesTabs extends StatefulWidget {
   List<Source> sources;
-  SourcesWidget({super.key, required this.sources});
+  SourcesTabs({super.key, required this.sources});
   @override
-  State<SourcesWidget> createState() => _SourcesWidgetState();
+  State<SourcesTabs> createState() => _SourcesTabsState();
 }
-class _SourcesWidgetState extends State<SourcesWidget> {
+class _SourcesTabsState extends State<SourcesTabs> {
   int selectedIndex = 0;
 
   @override
@@ -31,14 +31,14 @@ class _SourcesWidgetState extends State<SourcesWidget> {
                 indicatorColor: Colors.transparent,
                 isScrollable: true,
                 tabs: widget.sources.map((source) {
-                  return Sourceitemwidget(
+                  return SourceWidget(
                     source: source,
                     isSelected: widget.sources.indexOf(source) == selectedIndex,
                   );
                 }).toList()),
           ),
         ),
-        ArticelsListWidget(source: widget.sources[selectedIndex])
+        ArticelsView(source: widget.sources[selectedIndex])
       ],
     );
   }

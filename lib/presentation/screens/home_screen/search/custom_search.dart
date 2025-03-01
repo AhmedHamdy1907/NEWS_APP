@@ -38,7 +38,6 @@ class customSearch extends SearchDelegate
   Widget? buildLeading(BuildContext context) {
     return IconButton(onPressed: () {
       Navigator.pop(context);
-
     }, icon: const Icon(Icons.arrow_back));
 
   }
@@ -59,8 +58,8 @@ class customSearch extends SearchDelegate
               },
               child:  Card(
                         child: Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text("${test[index]}"),
+              padding: const EdgeInsets.all(8.0),
+              child: Text(test[index]),
                         ),
                       ),
             ),itemCount: test.length,);

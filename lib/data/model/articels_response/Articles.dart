@@ -22,7 +22,7 @@ class Articles {
       this.content,});
 
   Articles.fromJson(dynamic json) {
-    source = json['source'] != null ? Source.fromJson(json['source']) : null;
+    source = json['source'] != null ? Source.fromJson(json['source']) : null;   // هنا اخدت سورسس واحده
     author = json['author'];
     title = json['title'];
     description = json['description'];

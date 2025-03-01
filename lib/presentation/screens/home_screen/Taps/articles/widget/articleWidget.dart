@@ -4,10 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:news_apps/data/model/articels_response/Articles.dart';
 
-import '../../../../../core/utils/routes_manager/routes_manger.dart';
+import '../../../../../../core/utils/routes_manager/routes_manger.dart';
 
-class ArticleItem extends StatelessWidget {
-  ArticleItem({super.key, required this.article});
+class ArticleWidget extends StatelessWidget {
+  ArticleWidget({super.key, required this.article});
   Articles article;
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class ArticleItem extends StatelessWidget {
             context, RoutesManager.articleDetails);
       },
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 8),
+        margin: const EdgeInsets.symmetric(horizontal: 8),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,

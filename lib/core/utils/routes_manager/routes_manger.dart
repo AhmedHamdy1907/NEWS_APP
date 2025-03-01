@@ -8,7 +8,7 @@ class RoutesManager {
   static const String articleDetails = "/articleDetails";
  static Map<String, WidgetBuilder> routes = {
     splash:  (BuildContext context) => const SplashScreen(),
-   home:(BuildContext context) =>  const homeScreen(),
+   home:(BuildContext context) =>  const HomeScreen(),
    articleDetails:(BuildContext context) =>   ArticleDetails(),
 };
 }

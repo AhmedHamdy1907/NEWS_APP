@@ -4,10 +4,10 @@ import 'package:news_apps/config/theme/application_theme.dart';
 import 'package:news_apps/core/utils/colors_manger/colors_manger.dart';
 import 'package:news_apps/data/model/SourcesResponse/Sources.dart';
 
-class Sourceitemwidget extends StatelessWidget {
+class SourceWidget extends StatelessWidget {
   Source source;
   bool isSelected;
-  Sourceitemwidget({super.key, required this.source,required this.isSelected});
+  SourceWidget({super.key, required this.source,required this.isSelected});
   @override
   Widget build(BuildContext context) {
     return Container(

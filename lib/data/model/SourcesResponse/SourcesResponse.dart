@@ -14,15 +14,28 @@ class SourcesResponse {
     status = json['status'];
     code=json["code"];
     message=json["message"];
-    if (json['sources'] != null) {
+    if (json['sources'] != null)
+    {
       sources = [];
       json['sources'].forEach((v)
-      {
-        sources?.add(Source.fromJson(v));
-      });
+    {
+  sources?.add(Source.fromJson(v));
+    });
     }
   }
 
-
-
 }
+// json['sources'].forEach((v)
+// {
+//   sources?.add(Source.fromJson(v));
+// });
+
+
+
+
+// List<dynamic>convert=json["sources"];
+// for (int i = 0; i <convert.length; i++)
+// {
+//   sources?.add(Source.fromJson(convert[i]));
+//
+// }

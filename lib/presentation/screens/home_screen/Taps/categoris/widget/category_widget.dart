@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:news_apps/config/theme/application_theme.dart';
 import '../../../../../../core/utils/app_stayel/app_stayl.dart';
 import '../../../../../../data_model/category_dataModel/category_data_model.dart';
 class CategoryWidget extends StatelessWidget {

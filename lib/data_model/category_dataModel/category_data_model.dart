@@ -13,37 +13,37 @@ class CategoryDM
   CategoryDM({required this.id,required this.title,required this.imagePath,required this.bgColor});
   static List<CategoryDM>getAllCategories=[
     CategoryDM(
-        id:Constantsmanger.sportsBackEngId,
+        id:ConstantsManger.sportsBackEngId,
         title:StringsManger.sports,
         imagePath: AssetsManager.sports,
         bgColor: ColorsManger.red),
     CategoryDM(
-        id:Constantsmanger.generalBackEngId,
+        id:ConstantsManger.generalBackEngId,
         title:StringsManger.general,
         imagePath: AssetsManager.general,
         bgColor: Colors.grey),
     CategoryDM(
-        id:Constantsmanger.healthsBackEngId,
+        id:ConstantsManger.healthsBackEngId,
         title:StringsManger.health,
         imagePath: AssetsManager.health,
         bgColor: ColorsManger.pink),
     CategoryDM(
-        id:Constantsmanger.businessBackEngId,
+        id:ConstantsManger.businessBackEngId,
         title:StringsManger.business,
         imagePath: AssetsManager.business,
         bgColor: ColorsManger.brown),
     CategoryDM(
-        id:Constantsmanger.scienceBackEngId,
+        id:ConstantsManger.scienceBackEngId,
         title:StringsManger.science,
         imagePath: AssetsManager.science,
         bgColor: ColorsManger.yallow),
     CategoryDM(
-        id:Constantsmanger.entertainmentBackEngId,
+        id:ConstantsManger.entertainmentBackEngId,
         title:StringsManger.entertainment,
         imagePath: AssetsManager.entertainment,
         bgColor: ColorsManger.blue),
     CategoryDM(
-        id:Constantsmanger.technologyBackEngId,
+        id:ConstantsManger.technologyBackEngId,
         title:StringsManger.technology,
         imagePath: AssetsManager.technology,
         bgColor: ColorsManger.green),

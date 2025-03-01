@@ -6,7 +6,7 @@ import '../../../../../core/utils/strings_manger/strings_manger.dart';
 typedef  OnDrawerItemCeliked = void Function (MenuItem);
 class HomeDrawer extends StatelessWidget {
   OnDrawerItemCeliked onDrawerItemClciked;
-  HomeDrawer({super.key ,required this.onDrawerItemClciked});
+  HomeDrawer({super.key ,required this.onDrawerItemClciked,});
   @override
   Widget build(BuildContext context) {
     return SafeArea(

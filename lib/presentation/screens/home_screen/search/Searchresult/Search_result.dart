@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:url_launcher/url_launcher.dart';
-import '../../../../../core/utils/assets_manger/assets_manger.dart';
+
 import '../../../../../data/api/api_manger/ApiManger.dart';
 import '../../../../../data/model/articels_response/Articles.dart';
-import '../../Taps/news/article_Item.dart';
+import '../../Taps/articles/widget/articleWidget.dart';
 // typedef MyListArticles = void Function(List<Articles>?articles);
 class SearchResult extends StatelessWidget {
   String text;
@@ -31,7 +28,7 @@ class SearchResult extends StatelessWidget {
           List<Articles> articles = snapshot.data!.articles!;
           return Expanded(
             child: ListView.builder(itemBuilder: (context, index) =>
-                ArticleItem(article: articles[index]),
+                ArticleWidget(article: articles[index]),
               itemCount: articles.length,),
           );
         });
