@@ -12,7 +12,7 @@ class ApiManger {
   static const String _articlesEndPoint = "/v2/everything";
   static const String _apiKey = "0e30f2884d9c4e93b28e4fcc61eb4e15";
 
-  static Future<Result<List<Source>>> getSources(String categoryId) async {
+   Future<Result<List<Source>>> getSources(String categoryId) async {
     try {
       Uri uri = Uri.http(_baseUrl, _sourcesEndPoint,
           {"apiKey": _apiKey, "category": categoryId});

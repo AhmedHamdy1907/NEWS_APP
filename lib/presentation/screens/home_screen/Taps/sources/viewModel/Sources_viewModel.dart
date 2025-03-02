@@ -3,13 +3,14 @@ import 'package:news_apps/data/api/api_manger/ApiManger.dart';
 import 'package:news_apps/data/model/SourcesResponse/Sources.dart';
 import 'package:news_apps/result.dart';
 import '../../../../../../base/base_state/base_state.dart';
+import '../../../../../../repository_contract/sources_repository_contract.dart';
 class SourcesViewModel extends BaseViewModel {
+  SourcesRepository sourcesRepository;
 
-
-  SourcesViewModel():super(state: LoadingState());
+  SourcesViewModel({required this.sourcesRepository}):super(state: LoadingState());
   void getSourcesByCategoryId(String categoryId) async {
     notifyListeners();
-    Result<List<Source>> result = await ApiManger.getSources(categoryId);
+    Result<List<Source>> result = await sourcesRepository.getSources(categoryId);
     switch (result) {
       case Success<List<Source>>():
         emit(SuccessState(data: result.data));

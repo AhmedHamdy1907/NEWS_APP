@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import '../../../../../../core/utils/di.dart';
+import '../../../../../../data/api/api_manger/ApiManger.dart';
+import '../../../../../../data/data_sourcre_impl/sources_datasource_impl.dart';
+import '../../../../../../data/repository_impl/source_repository_impl.dart';
 import '../../../../../../data_model/category_dataModel/category_data_model.dart';
 import '../../sources/view/sources_view.dart';
 import '../../sources/viewModel/Sources_viewModel.dart';
@@ -7,9 +11,6 @@ class categoryDetails extends StatelessWidget {
   CategoryDM categoryDM;
 
   categoryDetails({super.key, required this.categoryDM});
-
-  SourcesViewModel viewModel = SourcesViewModel();
-
   @override
   Widget build(BuildContext context) {
     return sourcesView( categoryDM: categoryDM);

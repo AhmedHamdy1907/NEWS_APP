@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:news_apps/data/api/api_manger/ApiManger.dart';
+import 'package:news_apps/data/data_sourcre_impl/sources_datasource_impl.dart';
+import 'package:news_apps/data/repository_impl/source_repository_impl.dart';
 import 'package:provider/provider.dart';
 import '../../../../../../base/base_state/base_state.dart';
+import '../../../../../../core/utils/di.dart';
 import '../../../../../../data_model/category_dataModel/category_data_model.dart';
 import '../../../../../common/error_state_widget.dart';
 import '../../../../../common/loading_state_widgt.dart';
@@ -17,7 +21,7 @@ class sourcesView extends StatefulWidget {
 }
 
 class _sourcesViewState extends State<sourcesView> {
-  SourcesViewModel viewModel = SourcesViewModel();
+  SourcesViewModel viewModel = SourcesViewModel(sourcesRepository: getSourceRepository());
 
   @override
   void initState() {
