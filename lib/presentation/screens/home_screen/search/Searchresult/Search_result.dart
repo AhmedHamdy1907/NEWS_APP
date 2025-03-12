@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_apps/domain/entity/Articles_entity.dart';
 
 import '../../../../../data/api/api_manger/ApiManger.dart';
 import '../../../../../data/model/articels_response/Articles.dart';
@@ -25,10 +26,12 @@ class SearchResult extends StatelessWidget {
 // كده بقوله لو وصلت لي ال server  بس ال dat اللي جايه غلط اعرض ال massage
 // طيب لو ال massage بي null معني ذللك انه موصلش لي ال server فبقوله اعرض سبب الايرور اللي موجود في ال snapshot
           }
+          //TODO
           List<Articles> articles = snapshot.data!.articles!;
+          List<ArticlesEntity> articlesEn= articles.map((e)=>e.toArticlesEntity()).toList();
           return Expanded(
             child: ListView.builder(itemBuilder: (context, index) =>
-                ArticleWidget(article: articles[index]),
+                ArticleWidget(article: articlesEn[index]),
               itemCount: articles.length,),
           );
         });

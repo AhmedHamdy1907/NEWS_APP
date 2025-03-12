@@ -21,7 +21,7 @@ class sourcesView extends StatefulWidget {
 }
 
 class _sourcesViewState extends State<sourcesView> {
-  SourcesViewModel viewModel = SourcesViewModel(sourcesRepository: getSourceRepository());
+  SourcesViewModel viewModel = SourcesViewModel(sourceUseCse: getSourceUseCase());
 
   @override
   void initState() {

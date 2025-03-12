@@ -3,9 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:news_apps/config/theme/application_theme.dart';
 import 'package:news_apps/core/utils/colors_manger/colors_manger.dart';
 import 'package:news_apps/data/model/SourcesResponse/Sources.dart';
+import 'package:news_apps/domain/entity/Source_entity.dart';
 
 class SourceWidget extends StatelessWidget {
-  Source source;
+  SourceEntity source;
   bool isSelected;
   SourceWidget({super.key, required this.source,required this.isSelected});
   @override

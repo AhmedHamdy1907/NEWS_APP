@@ -1,23 +1,25 @@
 import 'package:news_apps/base/base_state/base_state.dart';
 import 'package:news_apps/base/base_viewModel/base_viewModel.dart';
 import 'package:news_apps/data/model/articels_response/Articles.dart';
-import '../../../../../../repository_contract/articles_repository_contract.dart';
+import 'package:news_apps/domain/entity/Articles_entity.dart';
+import 'package:news_apps/domain/use-Case/articles_usecase.dart';
+import '../../../../../../domain/repository_contract/articles_repository_contract.dart';
 import '../../../../../../result.dart';
-class ArticlesViewModel extends BaseViewModel<List<Articles>>
+class ArticlesViewModel extends BaseViewModel<List<ArticlesEntity>>
 {
-  ArticlesRepository articlesRepository;
-ArticlesViewModel({required this.articlesRepository}):super(state: LoadingState());
+  GetArticlesUseCase articlesUseCase;
+ArticlesViewModel({required this.articlesUseCase}):super(state: LoadingState());
 
   void getArticlesBySourceId(String sourceId) async {
     state =LoadingState();
     notifyListeners();
-    Result<List<Articles>>  result = await articlesRepository.getArticles(sourceId);
+    Result<List<ArticlesEntity>>  result = await articlesUseCase.execute(sourceId);
     switch (result) {
-      case Success<List<Articles>>():
+      case Success<List<ArticlesEntity>>():
         emit(SuccessState(data: result.data));
-      case ServerError<List<Articles>>():
+      case ServerError<List<ArticlesEntity>>():
         emit(ErrorState(serverError: result));
-      case Error<List<Articles>>():
+      case Error<List<ArticlesEntity>>():
         emit(ErrorState(error: result));
     }
     notifyListeners(); // بعد ما خلصنا لازم نعمل تحديث للـ UI

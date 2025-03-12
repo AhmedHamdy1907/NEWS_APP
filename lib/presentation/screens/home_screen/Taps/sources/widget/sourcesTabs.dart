@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:news_apps/domain/entity/Source_entity.dart';
 import 'package:news_apps/presentation/screens/home_screen/Taps/sources/widget/sourceWidget.dart';
-import '../../../../../../data/model/SourcesResponse/Sources.dart';
 import '../../articles/View/articelsView.dart';
 class SourcesTabs extends StatefulWidget {
-  List<Source> sources;
+  List<SourceEntity> sources;
   SourcesTabs({super.key, required this.sources});
   @override
   State<SourcesTabs> createState() => _SourcesTabsState();

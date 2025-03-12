@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:news_apps/base/base_state/base_state.dart';
 import 'package:news_apps/data/api/api_manger/ApiManger.dart';
+import 'package:news_apps/domain/entity/Source_entity.dart';
+import 'package:news_apps/domain/use-Case/articles_usecase.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../../../core/utils/di.dart';
@@ -16,14 +18,14 @@ import '../widget/articleWidget.dart';
 class ArticelsView extends StatefulWidget {
   ArticelsView({super.key, required this.source});
 
-  Source source;
+  SourceEntity source;
 
   @override
   State<ArticelsView> createState() => _ArticelsViewState();
 }
 
 class _ArticelsViewState extends State<ArticelsView> {
-  ArticlesViewModel viewModel =ArticlesViewModel(articlesRepository:getArticlesRepository() );
+  ArticlesViewModel viewModel =ArticlesViewModel(articlesUseCase:getArticlesUseCase());
 
 
   // ArticlesViewModel viewModel = ArticlesViewModel(

@@ -1,4 +1,8 @@
 
+import 'dart:io';
+
+import 'package:news_apps/domain/entity/Articles_entity.dart';
+
 import '../SourcesResponse/Sources.dart';
 
 class Articles {
@@ -30,6 +34,20 @@ class Articles {
     urlToImage = json['urlToImage'];
     publishedAt = json['publishedAt'];
     content = json['content'];
+  }
+
+  ArticlesEntity toArticlesEntity()
+  {
+    return ArticlesEntity(
+      source: source?.toSourceEntity(),
+      description: description,
+      title: title,
+      content: content,
+      publishedAt: publishedAt,
+      url: url,
+      urlToImage: urlToImage
+
+    );
   }
 
 }
