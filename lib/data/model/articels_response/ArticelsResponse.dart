@@ -15,6 +15,8 @@ class ArticelsResponse {
 
   ArticelsResponse.fromJson(dynamic json) {
     status = json['status'];
+    code=json["code"];
+    message=json["message"];
     totalResults = json['totalResults'];
     if (json['articles'] != null) {
       articles = [];
